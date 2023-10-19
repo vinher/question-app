@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:question_app/domain/entyties/message.dart';
 
 
 class MyMessage extends StatelessWidget {
-  const MyMessage({super.key});
+  final Message message;
+  const MyMessage({super.key, required  this.message});
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +17,9 @@ class MyMessage extends StatelessWidget {
             color: colors.primary,
             borderRadius: BorderRadius.circular(20)
             ),
-            child:const Padding(
-          padding:  EdgeInsets.symmetric(horizontal:20.0,vertical: 10),
-          child: Text("lorem ipsum dolor sit amet"),
+            child: Padding(
+          padding:  const EdgeInsets.symmetric(horizontal:20.0,vertical: 10),
+          child: Text(message.text),
         ),
         ),
         
@@ -27,4 +29,3 @@ class MyMessage extends StatelessWidget {
     );
   }
 }
-
